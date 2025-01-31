@@ -1,12 +1,14 @@
 locals {
-
-  default_tags = merge(
-    { ManagedBy = "Terraform" },
-    try(local.metadata["tags"], {}),
-    try(var.metadata["tags"], {})
-  )
-
   metadata = {
+    resource_timeouts = merge(
+      try(local.metadata["resource_timeouts"], {}),
+      var.resource_timeouts
+    )
+    tags = merge(
+      { ManagedBy = "Terraform" },
+      try(local.metadata["tags"], {}),
+      try(var.metadata["tags"], {})
+    )
     validator_error_messages = merge(
       try(local.metadata["validator_error_messages"], {}),
       try(var.metadata["validator_error_messages"], {})
@@ -16,11 +18,6 @@ locals {
       try(var.metadata["validator_expressions"], {})
     )
   }
-
-  resource_timeouts = merge(
-    try(local.metadata["resource_timeouts"], {}),
-    var.resource_timeouts
-  )
 }
 
 variable "metadata" {
