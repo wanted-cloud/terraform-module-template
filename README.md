@@ -40,7 +40,7 @@ object({
     validator_error_messages = optional(map(string), {})
     validator_expressions    = optional(map(string), {})
     tags                     = optional(map(string), {})
-})
+  })
 ```
 
 Default: `{}`
@@ -54,12 +54,12 @@ Type:
 ```hcl
 map(
     object({
-        create = optional(string, "30m")
-        read   = optional(string, "5m")
-        update = optional(string, "30m")
-        delete = optional(string, "30m")
+      create = optional(string, "30m")
+      read   = optional(string, "5m")
+      update = optional(string, "30m")
+      delete = optional(string, "30m")
     })
-)
+  )
 ```
 
 Default:

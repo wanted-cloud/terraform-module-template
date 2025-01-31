@@ -30,19 +30,19 @@ variable "metadata" {
     validator_error_messages = optional(map(string), {})
     validator_expressions    = optional(map(string), {})
     tags                     = optional(map(string), {})
-})
+  })
 }
 
 variable "resource_timeouts" {
   description = "Resource timeouts map is serving as common interface for possible remote override of module resource timeout values."
   type = map(
     object({
-        create = optional(string, "30m")
-        read   = optional(string, "5m")
-        update = optional(string, "30m")
-        delete = optional(string, "30m")
+      create = optional(string, "30m")
+      read   = optional(string, "5m")
+      update = optional(string, "30m")
+      delete = optional(string, "30m")
     })
-)
+  )
   default = {
     default = {}
   }

@@ -1,4 +1,4 @@
 locals {
-    // Here you can define module metadata 
-    metadata = {}
+  // Here you can define module metadata 
+  metadata = {}
 }
