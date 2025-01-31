@@ -40,7 +40,7 @@ object({
     validator_error_messages = optional(map(string), {})
     validator_expressions    = optional(map(string), {})
     tags                     = optional(map(string), {})
-  })
+})
 ```
 
 Default: `{}`
@@ -52,12 +52,14 @@ Description: Resource timeouts map is serving as common interface for possible r
 Type:
 
 ```hcl
-map(object({
-    create = optional(string, "30m")
-    read   = optional(string, "5m")
-    update = optional(string, "30m")
-    delete = optional(string, "30m")
-  }))
+map(
+    object({
+        create = optional(string, "30m")
+        read   = optional(string, "5m")
+        update = optional(string, "30m")
+        delete = optional(string, "30m")
+    })
+)
 ```
 
 Default:
