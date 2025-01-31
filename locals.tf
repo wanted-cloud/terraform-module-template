@@ -1,4 +1,6 @@
 locals {
   // Here you can define module metadata 
-  metadata = {}
+  definitions = {
+    tags = { ManagedBy = "Terraform" }
+  }
 }
