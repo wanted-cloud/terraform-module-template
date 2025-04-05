@@ -67,7 +67,7 @@ Module was also published via Terraform Registry and can be used as a module fro
 
 ```hcl
 module "example" {
-  source  = "app.terraform.io/wanted-cloud/azure/resource-group"
+  source  = "wanted-cloud/..."
   version = "x.y.z"
 }
 ```
